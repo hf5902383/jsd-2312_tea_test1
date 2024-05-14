@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>tea-front</artifactId>
+        <groupId>fanghou.email</groupId>
+        <version>3.0</version>
+    </parent>
+
+    <!-- modelVersion 元素是 POM 文件的根元素之一，它指定了当前 POM 文件所遵循的模型版本。通常情况下，它的值为 4.0.0 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tea-front-content</artifactId>
+
+
+    <dependencies>
+        <!-- 可调用tea-common的数据-->
+        <dependency>
+            <groupId>fanghou.email</groupId>
+            <artifactId>tea-common</artifactId>
+        </dependency>
+
+        <!-- 它可以根据接口代码自动生成 API 文档，并提供一个美观易用的 Web 界面供开发人员浏览和测试 API 接口-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 这些注解可以自动生成对应的 getter、setter、toString、equals、hashCode 等方法-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

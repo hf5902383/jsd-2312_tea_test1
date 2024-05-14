@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fanghou.email.admin.content.dao.mapper.CategoryMapper">
+
+    <!-- CategoryPO getCategoryByName(String name); -->
+    <select id="countCategoryByName" resultMap="StandardResultMap">
+        SELECT id, name,
+               keywords, sort,
+               enable,is_display,
+               gmt_create, gmt_modified
+        FROM tedu_tea_mall.content_category
+        WHERE
+            name=#{name}
+    </select>
+
+    <select id="countCategoryByName" resultMap="Integer">
+        SELECT count (id)
+        FROM tedu_tea_mall.content_category
+        WHERE
+            name=#{name}
+    </select>
+
+    <sql id="StandardQueryFields">
+        <if test="true">
+            id, name, keywords, sort, enable, is_display
+        </if>
+    </sql>
+
+    <resultMap id="StandardResultMap"
+               type="fanghou.email.admin.content.pojo.po.CategoryPO">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="keywords" property="keywords"/>
+        <result column="sort" property="sort"/>
+        <result column="enable" property="enable"/>
+        <result column="is_display" property="isDisplay"/>
+    </resultMap>
+</mapper>

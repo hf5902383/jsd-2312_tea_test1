@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- 模块版本，版本号相当固定 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 父级项目 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 当前项目参数 -->
+    <groupId>fanghou.email</groupId>
+    <artifactId>jsd-2312_tea_test1</artifactId>
+    <version>3.0</version>
+
+    <!-- 打包方式 -->
+    <!-- pom：此项目仅用于整合子项目，本身并不实现其它功能性设计 -->
+    <packaging>pom</packaging>
+
+    <!-- 模块配置：包含哪些子级模块项目 -->
+    <!-- 在对各子级模块项目进行打包（package）之前，需要先对当前项目（根级项目）打包 -->
+    <!-- 在当前项目（根级项目）打包时，需要先删除以下modules标签（含子级） -->
+    <!-- 注意：使用IntelliJ IDEA时，如果删除以下标签，会提示是否删除各子模块项目，务必选择【No】 -->
+    <!-- 当前项目（根级项目）打包完毕后，恢复以下modules标签（含子级） -->
+    <modules>
+        <module>tea-front</module>
+        <module>tea-admin</module>
+        <module>tea-common</module>
+    </modules>
+
+    <!-- 属性配置 -->
+    <properties>
+        <mysql-conncetor-version>8.0.27</mysql-conncetor-version>
+        <knief4j-spring-boot.version>4.4.0</knief4j-spring-boot.version>
+        <lombok.version>1.18.20</lombok.version>
+        <tea-common.version>3.0</tea-common.version>
+        <mybatis.version>2.3.1</mybatis.version>
+        <spring-boot-test.version>2.5.0</spring-boot-test.version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!--不需要写版本号，parent继承的 spring-boot-starter-parent已经通过depencanymangement定义过版本信息-->
+            <!-- dependency进行依赖传递；dependencyMangement不进行依赖传递，但是可以统一版本信息 -->
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-conncetor-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+                <version>${knief4j-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>fanghou.email</groupId>
+                <artifactId>tea-common</artifactId>
+                <version>${tea-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-test.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+
+
+</project>
