@@ -29,7 +29,7 @@ public class ArticleController {
     private IArticleService articleService;
 
     @PostMapping("/add")
-    public JsonResult add(@RequestBody ArticleAddParam articleAddParam){
+    public JsonResult add(@Validated @RequestBody ArticleAddParam articleAddParam){
         articleService.add(articleAddParam);
         return JsonResult.success();
     }

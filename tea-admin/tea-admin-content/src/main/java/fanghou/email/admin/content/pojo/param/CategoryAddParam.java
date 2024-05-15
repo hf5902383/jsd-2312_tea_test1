@@ -12,7 +12,7 @@ public class CategoryAddParam implements Serializable {
 
     @ApiModelProperty("类别名称")
     @NotNull(message = "category cannot be empty")
-    @Size(min = 1, max = 4, message = "category cannot be too long")
+    @Size(min = 1, max = 15, message = "category cannot be too long")
     private String name;
 
 

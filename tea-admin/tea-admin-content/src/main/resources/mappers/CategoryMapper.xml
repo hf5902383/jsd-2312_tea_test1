@@ -14,12 +14,12 @@
             name=#{name}
     </select>
 
-    <select id="countCategoryByName" resultMap="Integer">
-        SELECT count (id)
-        FROM tedu_tea_mall.content_category
-        WHERE
-            name=#{name}
-    </select>
+<!--    <select id="countCategoryByName" resultType="Integer">-->
+<!--        SELECT count(id)-->
+<!--        FROM tedu_tea_mall.content_category-->
+<!--        WHERE-->
+<!--            name=#{name}-->
+<!--    </select>-->
 
     <sql id="StandardQueryFields">
         <if test="true">

@@ -27,6 +27,24 @@ public class GlobalExceptionHandler {
         return JsonResult.failed(ServiceCodeEnum.BAD_REQUEST.getCode(), deleteComma(allMessage));
     }
 
+
+    @ExceptionHandler
+    public JsonResult handleRunTimeException(RuntimeException e){
+        return JsonResult.failed(ServiceCodeEnum.BAD_REQUIRE.getCode(), e.getMessage());
+    }
+
+    @ExceptionHandler
+    public JsonResult handlerException(Throwable throwable){
+        log.error("Service have something wrong: ",throwable);
+        return JsonResult.failed(ServiceCodeEnum.BAD_REQUIRE.getCode(), "程序员正在尽力修复网络波动");
+    }
+
+
+
+
+
+
+
     private String deleteComma(StringBuffer str){
         str.delete(str.lastIndexOf(","),str.length());
         return str.toString();

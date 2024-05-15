@@ -7,6 +7,7 @@ public enum ServiceCodeEnum {
 
     SUCCESS(200,"Success"),
     BAD_REQUEST(400,"Client ERROR"),
+    BAD_REQUIRE(501,"RunTime Error"),
     FAILED(500,"Service ERROR");
 
     private Integer code;

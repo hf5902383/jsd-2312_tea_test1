@@ -24,8 +24,11 @@ public class CategoryController {
 
     @PostMapping("/add")
     public JsonResult add(@Validated @RequestBody CategoryAddParam categoryAddParam){
+        log.debug("增加类别接口-入参-{}",categoryAddParam);
         categoryService.add(categoryAddParam);
-        return JsonResult.success();
+        JsonResult success = JsonResult.success();
+        log.debug("增加类别接口-出参-{}",success);
+        return success;
     }
 
 }
