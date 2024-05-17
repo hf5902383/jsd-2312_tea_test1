@@ -12,7 +12,6 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.io.Serializable;
 
 /**
  * 数据持久层对象
